@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import Images from "./Images";
 
 
 function App(){
@@ -9,13 +10,15 @@ function App(){
         .then(res=> res.json())
         .then(data=> {
             setDogPic(data.message)
+
+
         })
 
     },
     [])
 
     return(
-        !dogPic ? <p> Loading ...</p>: <img src={dogPic} alt="A Random Dog"/>
+        !dogPic ? <p> Loading ...</p>: <img src={dogPic} alt="A Random Picture" />
     )
 }
 
